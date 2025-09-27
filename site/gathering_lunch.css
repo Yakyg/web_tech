@@ -1,0 +1,67 @@
+section>div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+}
+
+section>div>div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    background-color: white;
+
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13))
+}
+section>div>div:hover{
+    border: 2px solid rgb(255, 149, 0);
+    button{background-color: rgb(240, 224, 206);}
+}
+
+section>div>div>img{
+    width: 100%;
+    border-radius: 35px;
+}
+
+section>div>div>p{
+    font-size: 18px;
+}
+
+.m{
+    font-size: 16px;
+    color: grey;
+}
+
+section>div>div>button{
+    background-color: #f1eee9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px){
+    section>div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+    }
+}
+
+@media (max-width: 600px){
+    setion>h2{
+        text-align: center;
+    }
+        section>div{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 10px;
+    }
+}
