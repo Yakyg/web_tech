@@ -24,21 +24,21 @@
         <section>
             <h2>Выберите суп</h2>
             <div>
-                <div>
+                <div class="image-con">
                     <img src = "img_lunch/borshch.jpeg" alt="Борщ">
                     <p>350₽</p>
                     <p>Борщ</p>
                     <p class="m">400гр</p>
                     <button type="button">Добавить</button>
                 </div>
-                <div>
+                <div class="image-con">
                     <img src="img_lunch/puktyai.jpg" alt="Пуктяй">
                     <p>400₽</p>
                     <p>Пуктяй</p>
                     <p class="m">400гр</p>
                     <button type="button">Добавить</button>
                 </div>
-                <div>
+                <div class="image-con">
                     <img src="img_lunch/tom_yam.jpg" alt="Том ям">
                     <P>326₽</P>
                     <p>Том ям</p>
@@ -50,21 +50,21 @@
         <section>
             <h2>Выберите главное блюдо</h2>
             <div>
-                <div>
+                <div class="image-con">
                     <img src="img_lunch/kartofan.jpg" alt="Картошка жареная">
                     <p>250₽</p>
                     <p>Картошка с грибами</p>
                     <p class="m">350гр</p>
                     <button type="button">Добавить</button>
                 </div>
-                <div>
+                <div class="image-con">
                     <img src="img_lunch/Tefteli.jpg" alt="Тефтели с пюре">
                     <p>289₽</p>
                     <p>Тефтели с пюре</p>
                     <p class="m">350гр</p>
                     <button type="button">Добавить</button>
                 </div>
-                <div>
+                <div class="image-con">
                     <img src="img_lunch/Pasta.jpg" alt="Паста с морепродуктами">
                     <p>406₽</p>
                     <p>Паста с морепродуктами</p>
@@ -76,21 +76,21 @@
         <section>
             <h2>Выберите напиток</h2>
             <div>
-                <div>
+                <div class="image-con">
                     <img src="img_lunch/Apple.jpg" alt="яблочный сок">
                     <p>90₽</p>
                     <p>Яблочный сок</p>
                     <p class="m">300мл</p>
                     <button type="button">Добавить</button>
                 </div>
-                <div>
+                <div class="image-con">
                    <img src="img_lunch/carrot.png" alt="морковный сок">
                     <p>90₽</p>
                     <p>Морковный сок</p>
                     <p class="m">300мл</p>
                     <button type="button">Добавить</button>
                 </div>
-                <div>
+                <div class="image-con">
                     <img src="img_lunch/granat.jpg" alt="гранатоввый сок">
                     <p>90₽</p>
                     <p>Гранатовыый сок</p>
@@ -98,6 +98,66 @@
                     <button type="button">Добавить</button>
                 </div>
             </div>
+        </section>
+        <section id="secton-order">
+            <h2 id="h2-order">Сделать заказ</h2>
+            <form action="https://httpbin.org/post" method="post">
+                <div>
+                    <h3>Ваш заказ</h3>
+                    <label for="soup">Суп</label>
+                    <select name="soups" id="soup" required>
+                        <option value=''>--Выберите суп--</option>
+                        <option value='borshch'>Борщ</option>
+                        <option value="puktyai">Пуктяй</option>
+                        <option value='tom_yam'>Том ям</option>
+                    </select>
+                    <label for="main-dish">Главное блюдо</label>
+                    <select name="dish" id="main-dish" required>
+                        <option value=''>--Выберите главное блюдо--</option>
+                        <option value='kartofan'>Картошка с грибами</option>
+                        <option value="tefteli">Тефтели</option>
+                        <option value='pasta'>Паста с морепродуктами</option>
+                    </select>
+                    <label for="juce">Напиток</label>
+                    <select name="juces" id="juce" required>
+                        <option value=''>--Выберите сок--</option>
+                        <option value='apple'>Яблочный сок</option>
+                        <option value="carrot">Морковный сок</option>
+                        <option value='granat'>Гранатовый сок</option>
+                    </select>
+                    <label for="comment">Комментарии к заказу</label>
+                    <textarea id="comment" name="comment" rows="4"  required></textarea>
+                </div>
+                <div>
+                    <h3>Ваши данные</h3>
+                    <label for="name">Имя</label>
+                    <input id="name" name="name" required type="text">
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" required type="email">
+
+                    <div class="checkbox"><input id="check" required type="checkbox"><label for="check">Получать информацию о скидках или акциях</label></div>
+                    
+                    <label for="tel">Телефон</label>
+                    <input id="tel" name="tel" required type="tel">
+
+                    <label for="adres">Адрес</label>
+                    <input id="adres" name="adres" required type="text">
+                    <p id="ad">Доставка осуществляется только по Москве</p>
+
+                    <label for="time">Время доставки:</label>
+                    <div class="timebox">
+                    <input id="time" required type="radio" name="time"> <label for="time">Как можно скорее</label>
+                    <input id="time2" required type="radio" name="time"> <label for="time2">К указаному времени</label>
+                    </div>
+
+                    <label for="time_choice">Укажите время доставки</label>
+                    <input id="time_choice" name="time_choice" required type="time" min="07:00" max="23:00" step="300">
+                    <p id="time_ch">Доступое время доставки с 7:00 до 23:00</p>
+                </div>
+                <button id="sb" type="submit" name="submit-button">Отправить</button>
+                <button id="rb" type="reset" name="reset-button">Сбросить</button>
+            </form>
         </section>
     </main>
     <footer id="contact">
